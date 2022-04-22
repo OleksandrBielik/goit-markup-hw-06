@@ -383,10 +383,59 @@
                         </li>
                     </ul>
                 </div>
+                <div class="form-wrapper">
+                    <h3>Подпишитесь на рассылку</h3>
+                    <form class="subscription-form flex">
+                        <input type="email" name="email" placeholder="E-mail">
+                        <button class="flex" type="submit">
+                            Подписаться
+                            <svg width="24px" height="24px">
+                                <use href="./images/svg/icons.svg#icon-send"></use>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
             </div>
         </footer>
         <div class="backdrop is-hidden" data-modal>
             <div class="modal">
+                <h3>Оставьте свои данные, мы вам перезвоним</h3>
+                <form class="modal-form-order flex">
+                    <label for="order-name">Имя</label>
+                    <div class="input-wrapper">
+                        <input id="order-name" name="name" type="text" placeholder=" ">
+                        <svg width="18" height="18">
+                            <use href="./images/svg/icons.svg#icon-person-black"></use>
+                        </svg>
+                    </div>
+                    <label for="order-tel">Телефон</label>
+                    <div class="input-wrapper">
+                        <input id="order-tel" name="tel" type="tel" placeholder=" ">
+                        <svg width="18" height="18">
+                            <use href="./images/svg/icons.svg#icon-phone-black"></use>
+                        </svg>
+                    </div>
+                    <label for="order-email">Почта</label> 
+                    <div class="input-wrapper">
+                        <input id="order-email" name="email" type="email" placeholder=" ">
+                        <svg width="18" height="18">
+                            <use href="./images/svg/icons.svg#icon-email-black"></use>
+                        </svg>
+                    </div>
+                    <label for="order-comments">Комментарий</label>
+                    <textarea id="order-comments" name="comments" placeholder="Введите текст"></textarea>
+                    <div class="input-checkbox-wrapper flex">
+                        <input id="order-agreement" name="agreement" type="checkbox">
+                        <label class="flex" for="order-agreement">
+                            <svg class="checkbox" width="16" height="15">
+                                <use href="./images/svg/icons.svg#icon-check"></use>
+                            </svg>
+                            <span>Соглашаюсь с рассылкой и принимаю&nbsp;</span>
+                            <a href="#">Условия договора</a>
+                        </label>
+                    </div>
+                    <button type="submit">Отправить</button>
+                </form>
                 <button class="close-button" type="button" data-modal-close>
                     <svg width="30" height="30">
                         <use href="./images/svg/icons.svg#icon-close"></use>

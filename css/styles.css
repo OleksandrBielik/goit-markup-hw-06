@@ -8,10 +8,12 @@
     --white-color: #FFFFFF;
     --white-color-opacity: #FFFFFF1A;
     --border-color: #ECECEC;
+    --border-color-form: #21212133;
     --border-color-product: #EEEEEE;
     --button-shadow-color-first: #0000001F;
     --button-shadow-color-second: #00000014;
     --button-shadow-color-third: #0000001A;
+    --button-shadow-color-fourth: #00000026;
     --container-shadow-color-first: #00000033;
     --container-shadow-color-second: #00000024;
     --container-shadow-color-third: #0000000F;
@@ -20,6 +22,9 @@
     --icon-color: #AFB1B8;
     --overlay-activity-color: #2F303ACC;
     --overlay-color: #00000033;
+    --input-border-color: #FFFFFF4D;
+    --form-button-color: #188CE8;
+    --black-color: #000000;
 }
 
 
@@ -208,7 +213,9 @@ footer a:focus {
 
 .portfolio button,
 .web-studio button, 
-.close-button {
+.close-button, 
+.form-wrapper button, 
+.modal-form-order button {
     cursor: pointer;
     font-family: inherit;
     color: inherit;
@@ -592,6 +599,55 @@ footer .mail {
     background-color: var(--background-color-active)
 }
 
+.form-wrapper {
+    max-width: 570px;
+    width: 100%;
+    margin-left: 93px;
+    margin-top: 12px;
+}
+
+.form-wrapper > form {
+    justify-content: space-between;
+    position: relative;
+}
+
+.form-wrapper input::placeholder{
+    font-size: 16px;
+    line-height: 1.24;
+    letter-spacing: 0.03em;
+    text-align: left;
+    color: var(--white-color);
+    opacity: 60%;
+}
+
+.form-wrapper input {
+    width: 100%;
+    background-color: var(--background-color-dark);
+    padding: 15px 16px;
+    border: 1px solid var(--input-border-color);
+    box-shadow: 0px 4px 4px 0px var(--button-shadow-color-fourth);
+    border-radius: 4px;
+    color: var(--white-color);
+    opacity: 60%;
+}
+
+.form-wrapper button {
+    justify-content: center;
+    padding: 10px 28px 10px 29px;
+    margin-left: 12px;
+    background-color: var(--background-color-active);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+    text-align: center;
+    box-shadow: 0px 4px 4px 0px var(--button-shadow-color-fourth);
+}
+
+.form-wrapper svg {
+    margin-left: 10px;
+}
+
 .backdrop {
     position: fixed;
     top: 0;
@@ -612,6 +668,7 @@ footer .mail {
     position: absolute;
     top: 50%;
     left: 50%;
+    padding: 40px;
     min-width: 528px;
     min-height: 581px;
     border-radius: 4px;
@@ -623,6 +680,153 @@ footer .mail {
     transform: translate(-50%, -50%) scale(1);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal > h3 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.modal-form-order {
+    flex-direction: column;
+}
+
+.modal-form-order input, 
+.modal-form-order textarea {
+    width: 100%;
+    border: 1px solid var(--border-color-form);
+    border-radius: 4px;
+}
+
+.modal-form-order input {
+    position: relative;
+    padding: 0 15px 0 42px;
+    height: 40px;
+}
+
+.modal-form-order label {
+    margin-bottom: 4px;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: var(--secondary-color);
+}
+
+.modal-form-order textarea {
+    padding: 12px 16px;
+    height: 120px;
+    resize: none;
+}
+
+.modal-form-order textarea::placeholder, 
+.modal-form-order input::placeholder {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: var(--secondary-color);
+    opacity: 50%;
+}
+
+.modal-form-order .input-wrapper {
+    position: relative;
+
+}
+
+.input-wrapper svg {
+    fill: var(--main-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-wrapper input {
+    border: 1px solid var(--border-color-form);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-wrapper input:focus + svg {
+    fill: var(--background-color-active);
+}
+.input-wrapper input:focus, 
+.modal-form-order textarea:focus {
+    border-color: var(--background-color-active);
+    outline: none;
+}
+
+.input-checkbox-wrapper label {
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    text-align: left;
+    color: var(--secondary-color);
+}
+
+.input-checkbox-wrapper input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.input-checkbox-wrapper a {
+    color: var(--background-color-active);
+    display: inline-block;
+    border-bottom: 1px solid currentColor;
+    line-height: 0.8;
+}
+
+.input-checkbox-wrapper {
+    justify-content: center;
+}
+
+.modal-form-order svg:not(.checkbox) {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%)
+}
+
+.modal-form-order button {
+    display: inline-block;
+    padding: 10px 55px 10px 56px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 200px;
+    background-color: var(--form-button-color);
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+    text-align: center;
+    box-shadow: 0px 4px 4px 0px var(--button-shadow-color-fourth);
+}
+
+svg.checkbox {
+    margin-right: 7px;
+    border: 2px solid var(--main-color);
+    border-radius: 2px;
+    fill: transparent;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+#order-agreement:checked + label svg.checkbox {
+    background-color: var(--background-color-active);
+    fill: white;
+    border: none;
 }
 
 .backdrop.is-hidden .modal{
@@ -639,12 +843,20 @@ button.close-button {
     margin-left: auto;
     padding: 0;
     background-color: inherit;
+    color: var(--black-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button.close-button:hover,
+button.close-button:focus {
+    color: var(--background-color-active);
 }
 
 .close-button > svg {
     border: 1px solid var(--button-shadow-color-third);
     border-radius: 50%;
     vertical-align: bottom;
+    fill: currentColor;
 }
 
 
